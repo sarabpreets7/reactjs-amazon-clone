@@ -4,9 +4,16 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../redux/stateProvider';
+import { auth } from "../firebase";
 
 function Header() {
   const [initialState,dispatch] = useStateValue();
+
+  const handleAuthenticaton = () => {
+    if (initialState.user) {
+      auth.signOut();
+    }
+  }
 
   return (
     <Navbar>
@@ -19,8 +26,9 @@ function Header() {
        </SearchBar>
        <HeaderNav>
           <Header_navOption>
-            <Line1>Hello Guest</Line1>
-            <Line2>Sign in</Line2>
+            <Line1>{initialState.user != null?initialState.user.email.split("@")[0]:'Guest'}</Line1>
+            {initialState.user !=null?<Line2 onClick={handleAuthenticaton} className='user_btn'>Sign out</Line2>:<Link className='user_btn' to="/login">Sign in</Link>}
+            
           </Header_navOption>
 
           <Header_navOption>

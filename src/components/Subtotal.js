@@ -5,14 +5,23 @@ import { getBasketTotal} from '../redux/reducer'
 function Subtotal() {
 
   useEffect(()=>{
-    console.log('mounted');
+    
   },[])
+
+
+    function numberWithCommas(numb) {
+      var str = numb.toString().split(".");
+      str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return str.join(".");
+  }
+
   const [initialState, dispatch] = useStateValue();
+  
 
   
   return (
     <Container>
-        <Heading>Subtotal ({initialState.basket.length} items):<strong>{Intl.NumberFormat('de-DE', { style: 'currency', currency: 'USD' }).format(getBasketTotal(initialState.basket))}</strong> </Heading>
+        <Heading>Subtotal ({initialState.basket.length} items):$<strong>{numberWithCommas(getBasketTotal(initialState.basket))}</strong> </Heading>
         <ContainsGift>This order contains a gift</ContainsGift>
         <CheckoutBtn>Proceed to Checkout</CheckoutBtn>
     </Container>

@@ -4,7 +4,18 @@ export const initialState = {
   };
 
 export const getBasketTotal = (basket) => 
-    basket?.reduce((amount, item) => (item.qty*item.price) + amount, 0);
+{
+  var total =0;
+  for(let i=0;i<basket.length;i++){
+    total += (basket[i].qty*basket[i].price)
+  }
+  return total.toFixed(2);
+  }
+
+  // basket?.reduce((amount, item) => (item.qty*item.price) + amount, 0);
+
+    
+
 
 
   const reducer = (state, action) => {

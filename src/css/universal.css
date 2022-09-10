@@ -25,3 +25,10 @@
 
   transform: translateY(-4px);
 }
+.user_btn{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
