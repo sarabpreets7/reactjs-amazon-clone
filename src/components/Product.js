@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useStateValue } from '../redux/stateProvider';
-
+import "../css/universal.css"
 
 function Product(props) {
     const [{basket},dispatch] = useStateValue();
@@ -48,7 +48,7 @@ function Product(props) {
 
 
     return (
-        <ProductContainer >
+        <ProductContainer className='product_container' >
 
         <ProductInfo>{props.desc}</ProductInfo>
         <ProductPrice><small>$</small><strong>{props.price}</strong></ProductPrice>

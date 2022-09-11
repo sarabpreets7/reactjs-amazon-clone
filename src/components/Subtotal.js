@@ -2,8 +2,10 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useStateValue } from '../redux/stateProvider'
 import { getBasketTotal} from '../redux/reducer'
-function Subtotal() {
+import { useNavigate } from 'react-router-dom';
 
+function Subtotal() {
+  const navigate = useNavigate();
   useEffect(()=>{
     
   },[])
@@ -14,6 +16,9 @@ function Subtotal() {
       str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       return str.join(".");
   }
+  const navigateToPayment=()=>{
+    navigate("/payment")
+  }
 
   const [initialState, dispatch] = useStateValue();
   
@@ -23,7 +28,7 @@ function Subtotal() {
     <Container>
         <Heading>Subtotal ({initialState.basket.length} items):$<strong>{numberWithCommas(getBasketTotal(initialState.basket))}</strong> </Heading>
         <ContainsGift>This order contains a gift</ContainsGift>
-        <CheckoutBtn>Proceed to Checkout</CheckoutBtn>
+        <CheckoutBtn onClick={navigateToPayment}>Proceed to Checkout</CheckoutBtn>
     </Container>
   )
 }
@@ -60,5 +65,6 @@ margin-top: 10px;
 border: 1px solid;
 border-color: #a88734 #9c7e31 #846a29;
 color: #111;
+cursor: pointer;
 `
 export default Subtotal

@@ -56,12 +56,12 @@ const decreaseQuantity =() =>{
                     <InCartInfo>
                         <ProductInfoCart>{props.desc}</ProductInfoCart>
                         <ProductPrice><small>$</small><strong>{props.price}</strong></ProductPrice>
-                        <QuantityContainer>
+                        {props.thruPayment == false?<QuantityContainer>
                             <span className='quantity__btn' >Qty:{props.qty}</span>
                             <div className='increment__decrement'> <span onClick={increaseQuantity} className='add'>+</span><span onClick={decreaseQuantity} className='minus'>-</span></div>
-                        </QuantityContainer>
+                        </QuantityContainer>:''}
                         <span style={{ marginBottom: '10px' }}>{rating}</span>
-                        <ButtonCart onClick={removeFromCart}>Remove from Basket</ButtonCart>
+                        {props.thruPayment == false?<ButtonCart onClick={removeFromCart}>Remove from Basket</ButtonCart>:<div>Quantity: {props.qty}</div>}
                     </InCartInfo>
 
                 </InCartContainer> 

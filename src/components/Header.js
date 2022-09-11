@@ -5,13 +5,21 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../redux/stateProvider';
 import { auth } from "../firebase";
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const [initialState,dispatch] = useStateValue();
+  const navigate = useNavigate();
 
   const handleAuthenticaton = () => {
     if (initialState.user) {
       auth.signOut();
+      dispatch({
+        type: 'EMPTY_BASKET',
+        
+      
+    })
+    navigate("/")
     }
   }
 

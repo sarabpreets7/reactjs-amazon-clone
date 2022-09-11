@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import CartProduct from './CartProduct'
 import Subtotal from './Subtotal'
 import { useStateValue } from '../redux/stateProvider'
+
 function Checkout() {
 
   const [initialState, dispatch] = useStateValue();
@@ -18,7 +19,7 @@ function Checkout() {
             <BannerDiv>
                 <BannerImg src='https://m.media-amazon.com/images/G/01/FireTV/Inline/IDB_RatingLabel_NA._TTW_.jpg'/>
             </BannerDiv>
-            <h2>Your Shopping Basket</h2>
+            <h2>{initialState.user != null?`Hi ${initialState.user.email.split("@")[0]}`:''}<br></br>Your Shopping Basket</h2>
             <Line/>
 
             <ItemsContainer>
@@ -57,7 +58,7 @@ function Checkout() {
 
                   {initialState.basket.map(function(data){
                     return(
-                      <CartProduct productImg={data.image}
+                      <CartProduct thruPayment={false} productImg={data.image}
                      desc= {data.title}
                      price={data.price}
                      rating = {data.rating}

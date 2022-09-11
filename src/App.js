@@ -7,6 +7,7 @@ import Login from './components/Login';
 import { auth } from "./firebase";
 import { useEffect } from 'react';
 import { useStateValue} from "./redux/stateProvider";
+import Payment from './components/Payment';
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -45,6 +46,7 @@ function App() {
       <Route exact path='/checkout' element={[<Header/>,<Checkout/>]}>
        
       </Route>
+      <Route exact path='/payment' element={[<Header/>,<Payment/>]}></Route>
     </Routes>
     
   </Router>
