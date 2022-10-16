@@ -40,14 +40,14 @@ function App() {
   
     <Routes>
      
-     <Route exact path='/login' element={[<Login/>]}></Route>
-      <Route exact path='/' element={[<Header/>,<HomePage/>]}>
+     <Route exact path='/reactjs-amazon-clone/login' element={[<Login/>]}></Route>
+      <Route exact path='/reactjs-amazon-clone/' element={[<Header/>,<HomePage/>]}>
       </Route>
-      <Route exact path='/checkout' element={[<Header/>,<Checkout/>]}>
+      <Route exact path='/reactjs-amazon-clone/checkout' element={[<Header/>,<Checkout/>]}>
        
       </Route>
-      <Route exact path='/payment' element={[<Header/>,<Payment/>]}></Route>
-      <Route exact path='/orders' element={[<Header/>,<Orders/>]}></Route>
+      <Route exact path='/reactjs-amazon-clone/payment' element={[<Header/>,<Payment/>]}></Route>
+      <Route exact path='/reactjs-amazon-clone/orders' element={[<Header/>,<Orders/>]}></Route>
     </Routes>
     
   </Router>

@@ -14,7 +14,7 @@ function Subtotal() {
 
  
   const navigateToPayment=()=>{
-    navigate("/payment")
+    navigate("/reactjs-amazon-clone/payment")
   }
 
   const [initialState, dispatch] = useStateValue();

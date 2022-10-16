@@ -25,7 +25,7 @@ function Header() {
 
   return (
     <Navbar>
-       <Link to="/">
+       <Link to="/reactjs-amazon-clone/">
           <Logo src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'/>
        </Link>
        <SearchBar>
@@ -35,13 +35,13 @@ function Header() {
        <HeaderNav>
           <Header_navOption>
             <Line1>{initialState.user != null?initialState.user.email.split("@")[0]:'Guest'}</Line1>
-            {initialState.user !=null?<Line2 onClick={handleAuthenticaton} className='user_btn'>Sign out</Line2>:<Link className='user_btn' to="/login">Sign in</Link>}
+            {initialState.user !=null?<Line2 onClick={handleAuthenticaton} className='user_btn'>Sign out</Line2>:<Link className='user_btn' to="/reactjs-amazon-clone/login">Sign in</Link>}
             
           </Header_navOption>
 
           <Header_navOption>
             <Line1>Returns</Line1>
-            <Line2><Link className='user_btn' to="/orders">& Orders</Link></Line2>
+            <Line2><Link className='user_btn' to="/reactjs-amazon-clone/orders">& Orders</Link></Line2>
           </Header_navOption>
 
           <Header_navOption>
@@ -49,7 +49,7 @@ function Header() {
             <Line2>Prime</Line2>
           </Header_navOption>
 
-          <Link style={{textDecoration:'none',background:'transparent',color:'inherit'}} to="/checkout">
+          <Link style={{textDecoration:'none',background:'transparent',color:'inherit'}} to="/reactjs-amazon-clone/checkout">
             <Header_navOption style={{flexDirection:'row',alignItems:'center'}}>
                 <ShoppingBasketIcon style={{marginRight:'5px'}}/>
                 <span>{initialState.basket?.length}</span>

@@ -48,7 +48,7 @@ export default function Payment(){
               type: 'EMPTY_BASKET',
           })
 
-          navigate('/orders')
+          navigate('/reactjs-amazon-clone/orders')
         },1000)
 
     
