@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useStateValue } from '../redux/stateProvider'
 import { getBasketTotal} from '../redux/reducer'
 import { useNavigate } from 'react-router-dom';
+import { numberWithCommas } from '../services/common_service';
 
 function Subtotal() {
   const navigate = useNavigate();
@@ -11,11 +12,7 @@ function Subtotal() {
   },[])
 
 
-    function numberWithCommas(numb) {
-      var str = numb.toString().split(".");
-      str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      return str.join(".");
-  }
+ 
   const navigateToPayment=()=>{
     navigate("/payment")
   }

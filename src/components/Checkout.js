@@ -10,7 +10,6 @@ function Checkout() {
 
   useEffect(()=>{
 
-    console.log(initialState.basket);
   },[])
 
   return (
