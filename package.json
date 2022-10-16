@@ -2,7 +2,8 @@
   "name": "amazon-clone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://sarabpreets7.github.io/amazon-clone",
+  "homepage": "http://sarabpreets7.github.io/reactjs-amazon-clone"
+  ,
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
